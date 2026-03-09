@@ -1,0 +1,131 @@
+:root {
+    --text-color: #fff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--text-color);
+    transition: 0.5s ease;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.sunny {
+    background: linear-gradient(-45deg, #f7971e, #ffd200);
+}
+
+.cloudy {
+    background: linear-gradient(-45deg, #757f9a, #d7dde8);
+}
+
+.rainy {
+    background: linear-gradient(-45deg, #314755, #26a0da);
+}
+
+.night {
+    background: linear-gradient(-45deg, #141e30, #243b55);
+}
+
+.container {
+    backdrop-filter: blur(15px);
+    background: rgba(28, 7, 7, 0.4);
+    padding: 30px;
+    border-radius: 20px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(139, 34, 34, 0.4);
+}
+
+.search-box {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    outline: none;
+}
+
+.search-box button {
+    padding: 10px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    background: #FF8400;
+    color: white;
+    cursor: pointer;
+}
+
+.location-btn {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    background: #0F6292;
+    color: white;
+    cursor: pointer;
+}
+
+.weather-card {
+    margin-top: 20px;
+    display: none;
+}
+
+.weather-card img {
+    width: 80px;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.forecast {
+    margin-top: 20px;
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.forecast-card {
+    min-width: 80px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loader {
+    display: none;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 15px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+@media(max-width:400px){
+    .container{
+        width:90%;
+    }
+}
